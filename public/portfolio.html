@@ -2,38 +2,93 @@
 <html>
 <head>
 	<title>Stock Simulator</title>
-	<script
-	src="https://code.jquery.com/jquery-3.2.1.js"
-	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-	crossorigin="anonymous"></script>
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cerulean/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css” integrity=“sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M” crossorigin=“anonymous”>
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/public/css/style.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	
-<!-- <link rel="stylesheet" type="text/css" href="/public/css/style.css"> -->
-	
-	
-<script src="/public/js/portfolio.js"></script>
-	
-	
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+
+	<!-- Link to Moment.js should go here -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
-<!-- <body>
+<body>
 	<div class="container-fluid">
 		<div class="jumbotron text-center">
 			<h1>Stock Simulator</h1>
-			<h3>Your Portfolio</h3>
+			<h3>Current Market and Portfolio details</h3>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="jumbotron text-center">
+	<h2 id="bankCashDisplay">Your Account Balance: </h2>
 		</div>
 	</div>
 
-		
+		<!-- <div class="col-md-9"> -->
 			<div class="container-fluid">
 					<div class="panel panel-primary">
-						<div class="panel-heading">Current Stock Market Data
+						<div class="panel-heading" style="background-color: #4377d8;">Current Stock Market Data
+						<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-refresh"></span> Refresh</button></div> 
+							<div class="panel-body">
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+                                                <th><strong>Stock Abbr</strong></th>
+												<th><strong>Stock Name</strong></th>
+												<th><strong>Current Price</strong></th>
+											</tr>
+										</thead>
+										</tr> 
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				<!-- </div> -->
+            </div>
+			
+			
+<div class="container-fluid">
+	<div class="row">
+		<!-- <div class="col-md-3"> -->
+		<div class="container"> 
+			<div class="panel-group">
+				<div class="panel panel-primary">
+					<div class="panel-heading" style="background-color: #4377d8;">Choose Stock</div>
+					<form>
+						<div class="container-fluid">
+							<div class="form-group">
+								<label for="stock-name">Stock name</label>
+								<input type="text" class="form-control" id="stock-name" placeholder="Apple Inc.">
+							</div>
+							<button class="btn btn-primary" id="search-stock" type="submit">Buy</button>
+							<!-- <div class="form-group">
+								<label for="buy">Buy: (amount of shares)</label>
+								<input type="number" class="form-control" id="buy" placeholder="0" min="100">
+							</div>
+							<div class="form-group">
+								<label for="sell">Sell: (amount of shares)</label>
+								<input type="number" class="form-control" id="sell" placeholder="0">
+							</div> -->
+                            <br>
+                            <br>
+						</div>
+					</form>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<div class="container-fluid">
+					<div class="panel panel-primary">
+						<div class="panel-heading" style="background-color: #80dbfc;">Your Portfolio
 						<button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-refresh"></span> Refresh</button></div> 
 							<div class="panel-body">
 								<div class="table-responsive">
@@ -53,26 +108,31 @@
 							</div>
 						</div>
 					</div>
-				
+				<!-- </div> -->
             </div>
-            
+			
+			
 <div class="container-fluid">
 	<div class="row">
-		
+		<!-- <div class="col-md-3"> -->
 		<div class="container"> 
 			<div class="panel-group">
 				<div class="panel panel-primary">
-					<div class="panel-heading">Choose Stock</div>
+					<div class="panel-heading" style="background-color: #80dbfc;">Choose Stock</div>
 					<form>
 						<div class="container-fluid">
 							<div class="form-group">
                                 <br>
-								
+								<!-- <label for="stock-name">Stock name</label>
+                                <input type="text" class="form-control" id="stock-name" placeholder="Apple Inc."> -->
                                 <select class="form-control">
                                     <option>Select Stock</option>
                                 </select>
 							</div>
-							
+							<!-- <div class="form-group">
+								<label for="buy">Buy:(amount of shares)</label>
+								<input type="number" class="form-control" id="buy" placeholder="0" min="100">
+							</div> -->
 							<div class="form-group">
 								<label for="sell">Amount of Shares</label>
                                 <input type="number" class="form-control" id="sell" placeholder="0">
@@ -80,50 +140,10 @@
                                 <button class="btn btn-primary" id="buy-stock" type="submit">Buy</button>
                                 <button class="btn btn-primary" id="sell-stock" type="submit">Sell</button>
 							</div>
-                            <br>
-                            <br>
-				    		</div>
-				    	</form>
-                    </div>
-                </div>
-			</div>
-        </div>
 	</div>
+	
 </div>
-<footer> Designed and Coded by R.A.N.T <footer> -->
-
-<div class="container" >
-	<div class="row" >
-	<div class="col-sm-4">
-		<h2>Stock Info</h2>
-		<h3>Stock Ticker : </h3>
-		<div id="stockTicker"></div>
-		<h3>Stock Current Price : </h3>
-		<div id ="currentPriceApi"></div>
-
-		<hr>
-
-		<h4>Search Stocks</h4>
-		<input id="searchStock" type="text" placeholder="tickerSearch">
-
-		<a  class="btn btn-lg btn-primary"  id="clickSearchApi"> Submit </a>
-		
-
-	</div>
-	<div class="col-sm-5 col-sm-offset-1">
-		<h2>Portfolio Information</h2>
-		<div id="displayPort" ></div>
-		<h3>Company Name : </h3>
-		<input id="tickerEntry" type="text" placeholder="Company Ticker Name">
-		<h3>Number of Shears : </h3>
-		<input id="numOfSharesEntry" type="number" placeholder="Number of Shares">
-
-		<a  class="btn btn-lg btn-primary"  id="clickEntryData"> Buy </a>
-		<a  class="btn btn-lg btn-primary"  id="clickEntryDataToSell"> Sell </a>
-		
-	</div>
-</div>
-</div>
-
+<footer> Designed and Coded by R.A.N.T <footer>
+<script src="assets/javascript/app.js"></script>
 </body>
 </html>
