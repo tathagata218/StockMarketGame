@@ -1,0 +1,31 @@
+.jumbotron{
+    background-image: url("../images/stocks.jpeg");
+    /* background-size: auto; */
+    color: white;
+}
+
+#userInfoEntry{
+    color: white;
+}
+body {
+    background-color: #102c59;
+    
+}
+
+h2,h3 {
+    color: white;
+}
+
+footer {
+    text-align: center;
+    color: #ced5e0;
+    font-size: 15px;
+}
+
+.control-label, .form-group{
+    color:white;
+}
+
+button{
+    margin-bottom: 25px;
+}

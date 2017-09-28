@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link  href="/public/css/style.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    
+                    <div class="jumbotron">
+                            <h1 class="display-3">The Stock Market Simulator</h1>
+                          
+                            <p class="lead">Welcome to Wall Street! You'll be starting off with a humble $100,000 to invest as you see fit. You'll be playing the current stock market so make sure to come back often in order to maximize your profit!</p>
+                          
+                            <hr class="my-4">
+                          
+                            <p>To get started, either create a username or choose your returning profile to continue making money! Try and top the leader boards to become a true Wolf of Wall Street!</p>
+                    
+                            
+                    </div>
+            </div>
+        </div>
+        <div class = "container">
+            <div class = "row">
+                <!-- <div class = "col-xs-12"> -->
+
+<div class = "row">
+  <div class = "col-md-1">
+  </div>
+  
+  <div class = "col-md-4">
+<form id="userInfoEntry">
+  <div class="form-group">
+    <label for="exampleInputEmail1">User Name :</label>
+    <input type="text" class="form-control" id="username" placeholder="Enter Username">
+    
+  </div>
+  <div>
+    <label for="exampleInputEmail1">First Name :</label>
+    <input type="text" class="form-control" id="userfirstName" placeholder="Enter First Name">
+  </div>
+  <div>
+    <label for="exampleInputEmail1">Last Name :</label>
+    <input type="text" class="form-control" id="userlastName" placeholder="Enter Last Name">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password :</label>
+    <input type="password" class="form-control" id="userPassword" placeholder="Password">
+  </div>
+  <a href="/port" class="btn btn-lg btn-primary"  id="clickStart"> Submit </a>
+    </div>
+  <div class = "col-md-1">
+  </div>
+<div class = "col-md-4">
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Returning Users</label>
+    <select class="form-control" id="nameReturnData">
+  <!-- this is wehere all the data names are populated        -->
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="userInputPassword1" placeholder="Password">
+  </div>
+  <a  class="btn btn-lg btn-primary"  id="clickStart2"> Submit </a>
+</form>  
+</div>
+<div class = "col-md-1">
+</div>
+
+        <div class="card-columns">
+  <div class="card">
+    <img class="card-img-top" src="public/images/market.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">All the satisfaction at none of the risk!</h4>
+      <p class="card-text">Afraid to play your hand in the Stock Market? Worried about losing all your hard earned money on a risk you wish you would have never taken? That's why we have The Stock Market Simulator! Test your skills and intiuition with your own portfolio, real time with REAL Stock Markets!</p>
+    </div>
+  </div>
+  <div class="card p-3">
+    <blockquote class="blockquote mb-0 card-body">
+      <p>"At first I was afraid. I was petrified. Now I'm really into Stock Market Simulator and making a lot of in game money. I will Survive!"</p>
+      <footer class="blockquote-footer">
+        <small class="text-muted">
+          Gloria Gaynor <cite title="RB Singer">- R&B Singer</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="public/images/bullAndBear.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">Not only fun, but educational!</h4>
+      <p class="card-text">In a game that's already bursting at the seams with fun, we've also included some education resources to help players learn the lingo and dynamics for the Stock Market!</p>
+    </div>
+  </div>
+  <div class="card text-center">
+    <div class="card-body">
+      <h4 class="card-title">WE LOVE FEEDBACK</h4>
+      <p class="card-text">If you have any issues with our Simulator or recommendation on how to make the game better please click the button below to be redirected to our submission page</p>
+      <button class="btn btn-primary" id="comment" type="submit">Comments</button>
+      <button class="btn btn-primary" id="suggest" type="submit">Suggestions</button>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img" src="public/images/overwhelmed.jpeg" alt="Card image">
+  </div>
+  <div class="card p-3 text-right">
+    <blockquote class="blockquote mb-0">
+      <p>All the stereotypes are true about Wall Street traders! I just lost thousands of fake dollars and I still feel like jumping off a roof! This Simulator is intense!</p>
+      <footer class="blockquote-footer">
+        <small class="text-muted">
+          Guy on the 55th floor<cite title="Just Jump Magazine">- Just Jumped Magazine</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">PLAYER REWARDS:</h4>
+      <p class="card-text">FIRST 5,000 players receive an extra $50,000 in their Bank!</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+    
+</body>
+<script src="public/js/landingPage.js"></script>
+</html>
