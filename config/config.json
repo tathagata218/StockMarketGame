@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "1challenge",
+    "password": "Babu91Sam37",
     "database": "stockgame_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

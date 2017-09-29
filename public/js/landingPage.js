@@ -10,7 +10,7 @@ $(function(){
 
     });
 
-    
+
 
 //This is User Auth
     // $("#clickStart2").on("click",function(){
@@ -75,7 +75,7 @@ $(function(){
 
     
   $("#clickStart").on('click',function(){
-      alert("clicked");
+    //   alert("clicked");
     var userdata = {
         userName : $("#username").val().trim(),
         firstName : $("#userfirstName").val().trim(),

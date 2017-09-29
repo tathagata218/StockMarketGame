@@ -17,9 +17,12 @@ module.exports = function(app){
     });
 
     app.put("/updateStockTrans", function(req,res){
-        db.stock_trans.update(req.body,{ where : {
-            id : req.body.id
-        }})
+        console.log(req.body);
+        db.stock_trans.update({numOfShares : req.body.newNumOfShares},{ where : {
+            companyName : req.body.userTicker
+        }}).then(function(){
+            res.json(true);
+        });
     });
 
     app.post("/userTransData",function(req,res){
