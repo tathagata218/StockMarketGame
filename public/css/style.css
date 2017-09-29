@@ -7,6 +7,14 @@
 #userInfoEntry{
     color: white;
 }
+
+#availableFunds {
+    background-color: #091933;
+    color: black;
+    padding: 20px;
+    margin: 20px;
+}
+
 body {
     background-color: #102c59;
     
